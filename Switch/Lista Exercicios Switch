@@ -1,0 +1,355 @@
+import java.util.Scanner;
+
+/*01
+ * Escreva um programa para receber um número inteiro correspondente ao número do dia da semana 
+ * (1 = domingo; 2 = segunda, 3 = terça, ...) e mostrar o dia correspondente por extenso.
+	Se o dia digitado não estiver na faixa de 1 a 7, informar “Dia 	inválido”.
+	
+	[Desafio] Acrescentar uma critica para só aceitar valores de 1 a 7,
+	antes de fazer a comparação dos dias da seman
+ */
+
+public class ListaSwitchExec01 {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		int numero;
+		String resultado;
+
+		boolean numValido = false;
+		boolean inf = false;
+		System.out.println("Digite conforme exemplo:");
+		System.out.println("1 = Dom, 2 = Seg, 3 = Ter, 4 = Qua, 5 = Qui, 6 = Sex, 7 = Sab");
+
+		do {
+			while (true) {
+				try {
+					do {
+						System.out.println("Entre com um número correspondente para o dia:");
+						numero = sc.nextInt();
+						if (numero > 0 && numero <= 7) {
+							numValido = true;
+						} else {
+							System.out.println("Digite de 1 a 7!");
+						}
+					} while (!numValido);
+
+				} catch (Exception exception) {
+					System.out.println("Digite apenas números!");
+					sc.next();
+					continue;
+				}
+				break;
+			}
+		} while (inf);
+
+		switch (numero) {
+		case 1:
+			System.out.println("Domingo");
+			break;
+		case 2:
+			System.out.println("Segunda");
+			break;
+		case 3:
+			System.out.println("Terça");
+			break;
+		case 4:
+			System.out.println("Quarta");
+			break;
+		case 5:
+			System.out.println("Quinta");
+			break;
+		case 6:
+			System.out.println("Sexta");
+			break;
+		case 7:
+			System.out.println("Sábado");
+			break;
+
+		default:
+			break;
+		}
+
+	}
+
+}
+**********************************************************************************************
+package ListaExecSwitch;
+
+/*02
+ * Escreva um programa para receber um número inteiro correspondente
+   ao número do dia da semana (1 = domingo; 2 = segunda, 3 = terça,...).
+   Mostrar se é “Dia útil”, “Final de semana” ou “Dia inválido”.
+ */
+import java.util.Scanner;
+
+public class ListaExecSwitch02 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int numero;
+
+		boolean numValido = false;
+		boolean inf = false;
+		System.out.println("Digite conforme exemplo:");
+		System.out.println("1 = Dom, 2 = Seg, 3 = Ter, 4 = Qua, 5 = Qui, 6 = Sex, 7 = Sab");
+
+		do {
+			while (true) {
+				try {
+					do {
+						System.out.println("Entre com um número correspondente para o dia:");
+						numero = sc.nextInt();
+						if (numero > 0 && numero <= 7) {
+							numValido = true;
+						} else {
+							System.out.println("Dia Inválido - Digite de 1 a 7!");
+						}
+					} while (!numValido);
+
+				} catch (Exception exception) {
+					System.out.println("Digite apenas números!");
+					sc.next();
+					continue;
+				}
+				break;
+			}
+		} while (inf);
+
+		switch (numero) {
+		case 1:
+		case 7:
+			System.out.println("Final de Semana");
+			break;
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+			System.out.println("Dia útil");
+			break;
+		default:
+			break;
+		}
+		sc.close();
+	}
+
+}
+
+***************************************************************************
+package ListaExecSwitch;
+
+import java.util.Scanner;
+
+/*03
+ * Escreva um programa para receber um número inteiro correspondente
+   ao número do mês.Mostra se o mês informado é “alta temporada” ou “baixa temporada”.
+   Obs.: Meses de alta temporada: dezembro a fevereiro, junho e julho)
+ */
+
+public class ListaExecSwitch03 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int numero;
+
+		boolean numValido = false;
+		boolean inf = false;
+		System.out.println("Digite conforme exemplo:");
+		System.out.println("1 = Jan, 2 = Fev, 3 = Mar, 4 = Abr, 5 = Mai, 6 = Jun");
+		System.out.println("7 = Jul, 8 = Ago, 9 = Set, 10 = Out, 11 = Nov, 6 = Dez");
+
+		do {
+			while (true) {
+				try {
+					do {
+						System.out.println("Entre com um número correspondente para o Mês:");
+						numero = sc.nextInt();
+						if (numero > 0 && numero <= 12) {
+							numValido = true;
+						} else {
+							System.out.println("Dia Mês - Digite de 1 a 12!");
+						}
+					} while (!numValido);
+
+				} catch (Exception exception) {
+					System.out.println("Digite apenas números!");
+					sc.next();
+					continue;
+				}
+				break;
+			}
+		} while (inf);
+
+		switch (numero) {
+		case 1:
+		case 2:
+		case 6:
+		case 7:
+		case 12:
+			System.out.println("Alta temporada");
+			break;
+		case 3:
+		case 4:
+		case 5:
+		case 8:
+		case 9:
+		case 10:
+		case 11:
+			System.out.println("Baixa temporada");
+			break;
+		default:
+			break;
+		}
+		sc.close();
+	}
+
+}
+
+*******************************************************************************
+import java.util.Scanner;
+
+/*05
+ * screva um programa para receber a matricula (string) de um aluno e mostra
+   o tipo de curso que ele faz, de acordo com a seguinte tabela:
+    Início da         Tipo de 
+    matricula         curso
+      1              Técnico
+      2 –4 			Graduação
+	  5 –6 			Lato Sensu
+	  7 –8 			Stricto Senso
+	Caso o início da matricula não seja um desse valores, mostrar “Matricula
+	incorreta”.
+ */
+public class ListaExecSwitch04 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		char tipoCurso = ' ';
+		System.out.println("***** Localize o Curso do Estudante: *****");
+		while (tipoCurso != '1' && tipoCurso != '2' && tipoCurso != '3' && tipoCurso != '4' && tipoCurso != '5'
+				&& tipoCurso != '6' && tipoCurso != '7' && tipoCurso != '8') {
+			
+			System.out.println("Digite Matricula do Estudante: ");
+			tipoCurso = sc.nextLine().charAt(0);
+			//tipoCurso = Character.toUpperCase(tipoCurso);
+
+			if (tipoCurso != '1' && tipoCurso != '2' && tipoCurso != '3' && tipoCurso != '4' && tipoCurso != '5'
+					&& tipoCurso != '6' && tipoCurso != '7' && tipoCurso != '8') {
+				System.out.println("Matricula Incorreta!");
+			}
+		}
+
+		switch (tipoCurso) {
+		case '1':
+			System.out.println("Curso: Técnico");
+			break;
+		case '2':
+		case '3':
+		case '4':
+			System.out.println("Curso: Graduação");
+			break;
+		case '5':			
+		case '6':
+			System.out.println("Curso: Latu Senso");
+			break;
+		case '7':
+		case '8':
+			System.out.println("Curso: Stricto Senso");
+			break;
+
+		default:
+			break;
+		}
+
+	}
+
+}
+
+********************************************************************************************************************
+package ListaExecSwitch;
+/*05
+ * Escreva um programa para receber uma string com uma data no formato dd/mm/aaaa.
+   Mostrar a data no formato dd de mmmmmmm de aaaaa, onde mmmmmmm corresponde ao mês por extenso.
+   Se o dia digitado um mês inexistente mostrar “Mês incorreto”.
+   Exemplo:
+   Entrada: 29/04/2020
+   Saída: 29 de abril de 2020
+ */
+
+import java.util.Scanner;
+
+public class ListaExecSwitch05 {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		String dia, mes, ano;
+
+		System.out.println("Informe dia (dd): ");
+		dia = sc.nextLine();
+
+		System.out.println("Informe mês (mm): ");
+		mes = sc.nextLine();
+
+		System.out.println("Informe ano (aaaa): ");
+		ano = sc.nextLine();
+
+		switch (mes)
+
+		{
+		case "01":
+			mes = "Janeiro";
+			break;
+		case "02":
+			mes = "Fevereiro";
+			break;
+		case "03":
+			mes = "Março";
+			break;
+		case "04":
+			mes = "Abril";
+			break;
+		case "05":
+			mes = "Maio";
+			break;
+		case "06":
+			mes = "Junho";
+			break;
+		case "07":
+			mes = "Julho";
+			break;
+		case "08":
+			mes = "Agosto";
+			break;
+		case "09":
+			mes = "Setembro";
+			break;
+		case "10":
+			mes = "Outubro";
+			break;
+		case "11":
+			mes = "Novembro";
+			break;
+		case "12":
+			mes = "Dezembro";
+			break;
+		default:
+			System.out.println("Mês incorreto!");
+			break;
+		}
+		System.out.println("Data digitada: " + dia + " de " + mes + " de " + ano);
+
+		sc.close();
+
+	}
+
+}
+
+

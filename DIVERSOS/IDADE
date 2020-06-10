@@ -1,0 +1,56 @@
+package execloop;
+
+import java.util.Scanner;
+
+public class ExecIdade {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int idade = 0;
+		int maior = Integer.MIN_VALUE;
+		int menor = Integer.MAX_VALUE;
+		int jovem = 0, adulta = 0, idosa = 0;
+		double media;
+		int soma = 0;
+		int cont = 0;
+
+		for (int i = 1; i <= 10; i++) {
+
+			cont++;
+			System.out.printf("Digite a %dª idade: ", cont);
+			idade = sc.nextInt();
+
+			if (idade > 0 && idade <= 25) {
+				jovem++;
+			} else if (idade >= 26 && idade <= 60) {
+				adulta++;
+			}
+
+			else {
+				idosa++;
+			}
+
+			if (idade > maior) {
+				maior = idade;
+			}
+			
+			if (idade < menor) {
+				menor = idade;
+			}
+			
+			soma += idade;
+		}
+		
+		media = soma / cont;
+		System.out.println("São jovens: " + jovem);
+		System.out.println("São adultos: " + adulta);
+		System.out.println("São idosos: " + idosa);
+		System.out.println("Mais velho: " + maior);
+		System.out.println("Mais novo: " + menor);
+		System.out.println("A média de idade é: " + media);
+		System.out.println("Soma das idades: " + soma);
+	}
+
+}
+

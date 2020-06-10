@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class GraduacaoPosgraduacao {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		char tipoCurso = ' ';
+		int contador = 0;
+		while (tipoCurso != 'G' && tipoCurso != 'P') {
+			System.out.println("Entre com tipo do curso [G] = Graduação / [P] = Pós-Graduação: ");
+			tipoCurso = sc.nextLine().charAt(0);
+			tipoCurso = Character.toUpperCase(tipoCurso);
+
+			if (tipoCurso != 'G' && tipoCurso != 'P') {
+				System.out.println("Tipo de curso incorreto!");
+			}
+			contador ++;
+
+		}
+
+		if (tipoCurso == 'G') {
+			System.out.println("GRADUAÇÃO");
+		} else {
+			System.out.println("PÓS-GRADUAÇÃO");
+		}
+		System.out.printf("\nAcertou na %dª tentativa",contador);
+	}
+
+}

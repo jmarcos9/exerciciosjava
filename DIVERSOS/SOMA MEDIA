@@ -1,0 +1,32 @@
+package execloop;
+//PROGRAMA QUE RECEBA CINCO NUMEROS E FAÇA A SOMA DE TODOS E A MÉDIA
+
+import java.util.Scanner;
+
+public class ExecSomaMedia {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		double num;
+		double sum = 0;
+		int count = 0;
+		double average =0;
+		
+		for (int i = 0; i < 5; i++) {
+			
+			count++;
+			System.out.printf("Digite %dº número: ", count);
+			num = sc.nextDouble();
+			
+			sum += num;
+			average = sum / count;
+		}
+		
+		System.out.println("Soma dos números: " +sum);
+		System.out.printf("Média " + String.format("%.2f", average));
+
+	}
+
+}
+

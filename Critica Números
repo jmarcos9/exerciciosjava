@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class CriticaEntrada {
+
+	public static void main(String[] args) {
+
+		Scanner ler = new Scanner(System.in);
+
+		int numero;
+
+		// Crítica de entrada
+		while (true) {
+			try {
+				System.out.println("Digite um número");
+				numero = ler.nextInt();
+			} catch (Exception exception) {
+				System.out.println("\nDigite apenas números");
+				ler.next();
+				continue;
+			}
+			break;
+		}
+		// Continuidade do código
+
+		ler.close();
+
+	}
+
+}

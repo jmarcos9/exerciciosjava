@@ -1,0 +1,154 @@
+INDICE:
+
+EX1 - FUNDACAO BRADESCO (STRING NÃO ESTÁ ORDENADO DECRESCENTE)
+EX2 - ORDENAÇÃO CRESCENTE E DECRESCENTE
+EX3 - ORDENAÇÃO CRESCENTE E DECRESCENTE 
+
+/* OBJETIVO:
+		Classificação dos elementos númericos de um array, utilizando o método
+		Arrays.sort da classe java.util.*/
+
+import java.util.*;
+
+/* IMPORTANTE:
+Definição da classe java.util.* para utilização do método Arrayssort
+*/
+public class ArraySort {
+
+	/* Método principal */
+	public static void main(String[] args) {
+
+		/* Definição dos valores numéricos de um array Unidimensional */
+		String[] idx = { "A", "E", "C", "B", "D" };
+
+		/* Apresentação dos valores de um array ANTES da classificação */
+
+		System.out.println("Valores de um array para ORDENAR/CLASSIFICAR:");
+
+		for (String valor : idx) {
+			System.out.println(valor + "\t");
+		}
+
+		/*
+		 * sobre a sintaxe => for(int valor : idx) {} A variável valor, declarada
+		 * internamente na estrutura do for deve ser definida com o mesmo tipo que os
+		 * dados do array (idx), neste caso está como int. Ela faz parte do loop e a
+		 * informação armazenada em valor será o elemento atual do próprio array. A
+		 * expressão lógica é o próprio array envolvido no loop. A sintaxe comum do laço
+		 * for é: for (inicialização;condição;incremento ou decremento){conteudo;}
+		 */
+		/* Execução do método sort para classificação/ordenação do array */
+		Arrays.sort(idx);
+		/* Impressão com quebra de 2 linhas vazias */
+		System.out.println(" ");
+		System.out.println(" ");
+
+		/*
+		 * Apresentação dos valores numéricos ORDENADOS/CLASSIFICADOS de um array
+		 * utilizando o método sort
+		 */
+		System.out.println("Valores de um array ORDENADO/CLASSIFICADO:");
+
+		for (String valor : idx) {
+			System.out.print(valor + "\t");
+		}
+
+		/* Impressão com quebra de 2 linhas vazias */
+		System.out.println(" ");
+		System.out.println(" ");
+
+	}
+
+}
+
+**********************************************************************************************
+
+import java.util.*;
+public class ArraySortNumeros {
+	
+	public static void main(String[] args) {
+		
+		int [] numeros = {15, 12, 25, 35, 45, 10};
+		
+		System.out.println("DESORDENADO");
+		for (int valor : numeros) {
+			System.out.print(valor + " ");
+		}
+		
+		Arrays.sort(numeros);
+		System.out.println();
+		System.out.println("ORDEM CRESCENTE");
+			
+		for (int valor : numeros) {
+			System.out.print(valor + " ");
+		}
+		
+		System.out.println();
+		System.out.println("ORDEM CRESCENTE(outro for)");
+		for (int i = 0; i < numeros.length; i++) {
+		     System.out.print(numeros[i] + " ");
+		      }
+		
+		 //Comando para colocar em ordem decrescente.
+		 System.out.println();
+		 System.out.println("ORDEM DECRESCENTE");			
+		 
+		for (int i = 1; i < numeros.length; i++) {
+			    for (int j = 0; j < i; j++) {
+			        if (numeros[i] > numeros[j]) {
+			            int temp = numeros[i];
+			            numeros[i] = numeros[j];
+			            numeros[j] = temp;		            
+		        }
+			}
+		}
+		//imprime decrescente
+		for(int i =0;i<numeros.length;i++){
+			System.out.println(numeros[i]);
+	    }
+
+	}
+
+}
+
+********************************************************************************
+
+import java.util.Arrays;
+
+public class Sort {
+
+	public static void main(String[] args) {
+
+		int[] num = { 10, 3, 9, 2, 7, 4, 6, 5, 8, 1 };
+		System.out.println("DESORDENADO");
+		for (int i = 0; i < num.length; i++) {
+			System.out.print(num[i] + " ");
+		}
+		Arrays.sort(num); // 
+		
+		System.out.println();
+		System.out.println("ORDENADO/CRESCENTE");
+		for (int i = 0; i < num.length; i++) {
+			System.out.print(num[i] + " ");
+		}
+		System.out.println();
+		System.out.println("ORDENADO/DECRESCENTE");
+
+		for (int i = 1; i < num.length; i++) {
+			for (int j = 0; j < i; j++) {
+				if (num[i] > num[j]) {
+					int temp = num[i];
+					num[i] = num[j];
+					num[j] = temp;
+				}
+			}
+		}
+
+		for (int i = 0; i < num.length; i++) {
+			System.out.print(num[i] + " ");
+		}
+
+	}
+
+}
+

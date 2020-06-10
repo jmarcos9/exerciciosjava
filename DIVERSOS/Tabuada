@@ -1,0 +1,52 @@
+ackage execloop;
+
+import java.util.Scanner;
+
+public class ExecCalc {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int num;
+
+		boolean numValido = false;
+
+		do {
+			System.out.println("Entre com um número para gerar a tabuada: ");
+			num = sc.nextInt();
+
+			if (num >= 1 && num <= 10) {
+				numValido = true;
+			} else {
+				System.out.println("Digite um número de 1 a 10!");
+				System.out.println();
+			}
+		} while (!numValido);
+
+		System.out.println("Tabuada Adição do número: " + num);
+		System.out.println();
+		for (int a = 1; a <= 10; a++) {
+			System.out.println(num + " + " + a + " = " + (num + a));
+			//System.out.println();
+		}
+		System.out.println();
+		
+		System.out.println();
+		System.out.println("Tabuada multiplicação do número: " + num);
+		
+		for (int m = 1; m <= 10; m++) {
+			System.out.println(num + " * " + m + " = " + (num * m));
+			//System.out.println();
+		}
+		/*System.out.println();
+		System.out.println("Tabuada divisão do número: " + num);
+		
+		for (int d = num; d <= 10; d = num + d) {
+			System.out.println(num + " / " + d + " = " + (num / d));
+			//System.out.println();
+		}*/
+
+	}
+
+}
+

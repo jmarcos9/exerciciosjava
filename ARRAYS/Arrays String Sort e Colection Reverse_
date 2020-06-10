@@ -1,0 +1,34 @@
+import java.util.Arrays;
+import java.util.Collections;
+
+public class ArraSort {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String[] nomes = { "MARCOS", "ANDRE", "PEDRO", "LUCIANA" };
+		System.out.println("Nomes desordenados");
+		for (int i = 0; i < nomes.length; i++) {
+			System.out.print(nomes[i] + " ");
+
+		}
+
+		Arrays.sort(nomes);
+		System.out.println();
+		System.out.println("nomes ordenados");
+		for (int i = 0; i < nomes.length; i++) {
+			System.out.print(nomes[i] + " ");
+
+		}
+
+		Arrays.sort(nomes, Collections.reverseOrder());
+		System.out.println();
+		System.out.println("nomes ordenados inversamente");
+		for (int i = 0; i < nomes.length; i++) {
+			System.out.print(nomes[i] + " ");
+
+		}
+
+	}
+
+}

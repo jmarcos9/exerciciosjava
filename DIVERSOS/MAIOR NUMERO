@@ -1,0 +1,32 @@
+package execloop;
+
+import java.util.Scanner;
+
+//PROGRAMA QUE RECEBE CINCO NUMEROS E IDENTIFICA O MAIOR
+public class ExecMaxNumber {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		int num;
+		int max = Integer.MIN_VALUE;
+		int cont = 0;
+
+		for (int i = 0; i < 5; i++) {
+
+			cont++;
+			System.out.printf("Digite %dº Número: ", cont);
+			num = sc.nextInt();
+
+			if (num > max) {
+				max = num;
+
+			}
+
+		}
+		System.out.println("Maior número é: " + max);
+	}
+
+}
+

@@ -1,0 +1,64 @@
+package ArraysBasico;
+
+import java.util.Scanner;
+
+public class Horas {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		String horario;
+		boolean infoValida = false;
+
+		do {
+			System.out.println("Informe a hora no formato HH:MM:SS\nCaso não queira finalizar informe 99:");
+			horario = sc.next();
+			if (horario.equals("99")) {
+				break;
+			}
+
+			if (horario.length() != 8) {
+				System.out.println("Horário com formato incorreto (HH:MM:SS");
+				continue;
+			}
+
+			int horaInt = Integer.parseInt(horario.substring(0, 2));
+			int minutoInt = Integer.parseInt(horario.substring(3, 5));
+			int segundoInt = Integer.parseInt(horario.substring(6, 8));
+
+			if (horaInt < 0 || horaInt > 23) {
+				System.out.println("Hora Incorreta");
+				infoValida = true;
+			}
+			if (minutoInt < 0 || minutoInt > 59) {
+				System.out.println("Minutos Incorretos");
+				infoValida = true;
+			}
+			if (segundoInt < 0 || segundoInt > 59) {
+				System.out.println("Segundo Incorretos");
+				infoValida = true;
+			}
+			
+			String  primeiroSeparador = horario.substring(2, 3);
+			String  SegundoSeparador = horario.substring(5, 6);
+			if (!(primeiroSeparador.equals(":")) || !(SegundoSeparador.equals(":"))) {
+				System.out.println("Separadores incorretos");
+				infoValida = true;
+			}
+			
+			if (infoValida == false) {
+				break;
+			}
+			System.out.println(horaInt);
+			System.out.println(minutoInt);
+			System.out.println(segundoInt);
+
+		} while (true);
+		if (!(horario.equals("99"))) {
+			System.out.println("Horário correto");
+
+		}
+
+	}
+
+}

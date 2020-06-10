@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class ParesDecrecentes {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int number;
+
+		System.out.println("Digite número: ");
+		number = sc.nextInt();
+
+		for (int i = 0 ; number >= i; --i ) {
+			if (i % 2 == 0 )
+				System.out.println(i);
+			//for (int sobe = 1, desce = 10; sobe <= 10 && desce >= 1; sobe++, desce--)
+		}
+		sc.close();
+
+	}
+
+}

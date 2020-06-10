@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class ProdutosSoma {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+
+		int contador = 0;
+		double acumulador = 0;
+		double valor;
+		boolean valorValido = false;
+
+		do {
+
+			while (true) {
+				try {// A instrução try permite definir um bloco de código a ser testado quanto a 
+					 //erros enquanto ele está sendo executado.
+					do {
+						System.out.println("Digite o valor do Produto: R$ ");
+						valor = sc.nextDouble();
+						if (valor > 0) {
+							valorValido = true;
+						} else {
+							System.out.println("Digite um valor maior que [0] ZERO!");
+						}
+					} while (!valorValido);
+					//A instrução catch permite definir um bloco de código a ser executado, se ocorrer um erro no bloco try.
+				} catch (Exception exception) {
+					System.out.println("Digite apenas números!");
+					sc.next();
+					continue;
+				}
+				break;
+			}
+
+			contador++;
+
+			acumulador = acumulador + valor;
+		} while (contador <= 5);
+
+		System.out.printf("Total dos a pagar dos Produtos: R$ %.2f ", acumulador);
+
+	}
+
+}
+

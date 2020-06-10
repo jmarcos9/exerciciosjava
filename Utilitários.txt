@@ -1,0 +1,5 @@
+http://www.universidadejava.com.br/materiais/java-casting-tipos-primitivos/
+
+https://www.devmedia.com.br/conversoes-em-java/2695
+
+https://dicasdejava.com.br/java-como-converter-string-para-int/

@@ -1,0 +1,34 @@
+package ArraysBasico;
+
+import java.util.Scanner;
+
+public class Horas {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		String horario = "05:03:20";
+		boolean infoValida = false;
+
+		do {
+			System.out.println("Informe a hora no formato HH:MM:SS");
+			horario = sc.next();
+			
+			if (horario.length()>8) {
+				System.out.println("Horário com formato incorreto (HH:MM:SS");
+				continue;
+			}
+			int horaInt = Integer.parseInt(horario.substring(0, 2));
+			int minutoInt = Integer.parseInt(horario.substring(3, 5));
+			int segundoInt = Integer.parseInt(horario.substring(6,8));
+			
+			System.out.println(horaInt);
+			System.out.println(minutoInt);
+			System.out.println(segundoInt);
+			
+
+		} while (!infoValida);
+
+	}
+
+}

@@ -1,0 +1,28 @@
+package execloop;
+
+//PROGRAMA QUE RECEBE DO UM NUMERO E APRESENTE TODOS OS IMPARES ATÉ ELE
+import java.util.Scanner;
+
+public class ExecOdd {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		int num = 0;
+
+		System.out.println("Digite um número: ");
+		num = sc.nextInt();
+
+		for (int i = 1; i <= num; i++) {
+
+			if (i % 2 == 1) {
+				System.out.println(i);
+
+			}
+		}
+
+	}
+
+}
+

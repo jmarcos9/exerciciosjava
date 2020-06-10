@@ -1,0 +1,80 @@
+import java.util.Scanner;
+
+public class Switch {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		char operacao;
+		float num1, num2, resultado = 0;
+
+		boolean dadoValido = false;
+
+		do {
+
+			System.out.print("Escolha sua operação [+ - * / ]: ");
+			operacao = sc.nextLine().charAt(0);
+
+			if (operacao == '+' || operacao == '-' || operacao == '*' || operacao == '*') {
+				dadoValido = true;
+			} else {
+				System.out.println("Operador incorreto!");
+			}
+
+		} while (!dadoValido);
+
+		while (true) {
+			try {
+				System.out.print("Entre com o primeiro número: ");
+				num1 = sc.nextFloat();
+			} catch (Exception exception) {
+				System.out.println("Digite apenas números!");
+				sc.next();
+				continue;
+			}
+			break;
+		}
+
+		while (true) {
+			try {
+				System.out.print("Entre com o segundo números: ");
+				num2 = sc.nextFloat();
+			} catch (Exception exception) {
+				System.out.println("Digite apenas números");
+				sc.next();
+				continue;
+			}
+			break;
+		}
+
+		System.out.println();
+
+		switch (operacao) {
+		case '+':
+			resultado = num1 + num2;
+			break;
+		case '-':
+			resultado = num1 - num2;
+			break;
+		case '*':
+			resultado = num1 * num2;
+			break;
+		case '/':
+			resultado = num1 / num2;
+			break;
+		default:
+			System.out.printf("Operação inválida.");
+			dadoValido = true;
+
+		}
+		// if (dadoValido == false) {
+		System.out.println("Resultado: " + String.format("%.2f", num1) + " " + operacao + " "
+				+ String.format("%.2f", num2) + " = " + String.format("%.2f", resultado));
+
+		sc.close();
+
+	}
+
+}
+

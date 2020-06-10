@@ -1,0 +1,34 @@
+ublic class Jogadora {
+	private int numero;
+	private String nome;
+
+	public static void main(String[] args) {
+		Jogadora jogadora = new Jogadora();
+		jogadora.setNumero(10);
+		jogadora.setNome("Marta");
+		System.out.println("A " + jogadora.getNome() + " é a maior camisa " + jogadora.getNumero() + 
+				" de todos os tempos");
+
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNome(String nome) { // método para mudar o valor da variável nome
+		this.nome = nome;
+	}
+
+	public void setNumero(int numero) { // método para mudar o valor da variável número
+		this.numero = numero;
+	}
+
+	public static String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

@@ -1,0 +1,30 @@
+public class ArraysMultidimencionais {
+
+	public static void main(String[] args) {
+		// indice 0 =  sistemas
+		// indice 1 = internet
+		double [][] notas = new double [2][4];
+		notas [0][0] = 9.5;
+		notas [0][1] = 8.5;
+		notas [0][2] = 6.5;
+		notas [0][3] = 7.5;
+		notas [1][0] = 4.5;
+		notas [1][1] = 6.4;
+		notas [1][2] = 7.3;
+		notas [1][3] = 7.9;
+		
+		System.out.println("\n");
+		// l = indice que será utilizado para indicar as linhas [2]
+		// c = indice que será utilizado para indicar as linhas [4]
+		// observe que ta,bém o aninhamento do laço for (for dentro do for)
+		
+		for (int l=0; l	< notas.length; l++) {
+				for(int c = 0; c < notas[l].length; c++){
+				System.out.println(l + " e " + c + " = " + notas[l] [c] + "\t");
+			}
+			
+		}
+
+	}
+
+}

@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Trocarvalores {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int primeiroNumero;
+		int segundoNumero;
+		int modificador;
+		
+		System.out.println("Digite Primeiro Número: ");
+		primeiroNumero = sc.nextInt();
+		System.out.println("Digite Segundo Número");
+		segundoNumero = sc.nextInt();
+		
+			if (primeiroNumero > segundoNumero) {
+				modificador = primeiroNumero;
+				primeiroNumero = segundoNumero;
+								
+				System.out.println("Variável: primeiroNumero, agora tem o menor valor: (" + primeiroNumero + ") e a variável: segundoNumero, tem o valor maior: (" + modificador +").") ;
+			} else {
+				
+				System.out.println("O Primeiro número (" + primeiroNumero + ") não é maior que o Segundo número(" + segundoNumero + " ).");
+			
+		}
+
+
+	}
+
+}
